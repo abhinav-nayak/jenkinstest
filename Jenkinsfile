@@ -5,23 +5,13 @@ pipeline {
    
     stage("build"){
       steps{
-          echo 'building..........'
+          echo 'building wheel file...........................'
           sh 'python3 setup.py bdist_wheel'
-          sh 'chmod -R 777 /home/abhinav/'
-          sh 'cp dist/* /home/abhinav/Downloads/'
+          sh 'def source="dist/*"'
+          sh 'def destination="/home/abhinav/Downloads/"'
+          sh "scp -r ${source} ${destination}"
       }
     }
     
-    stage("test"){
-      steps{
-          echo 'testing..........'
-      }
-    }
-    
-    stage("deploy"){
-      steps{
-          echo 'deploying..........'
-      }
-    }
   }
 }
