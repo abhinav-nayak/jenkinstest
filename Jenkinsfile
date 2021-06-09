@@ -6,7 +6,7 @@ pipeline {
     stage("build"){
       steps{
           echo 'building..........'
-          python3 setup.py bdist_wheel
+          sh 'python3 setup.py bdist_wheel'
       }
     }
     
