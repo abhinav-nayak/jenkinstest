@@ -7,7 +7,7 @@ pipeline {
       steps{
           echo 'building..........'
           sh 'python3 setup.py bdist_wheel'
-          sh 'sudo chmod -R 777 /home/'
+          sh 'sudo chmod -R 777 /home/abhinav/'
           sh 'cp dist/* /home/abhinav/Downloads/'
       }
     }
